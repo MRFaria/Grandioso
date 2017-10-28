@@ -4,13 +4,14 @@ var anim = "idle"
 const JUMP_SPEED = 450
 const FLOOR_NORMAL = Vector2(0,-1)
 const SLOPE_SLIDE_STOP = 100.0
-var gravity = Vector2(0, 100.0)
+var gravity = Vector2(0, 1500.0)
 var velocity = Vector2(0, 0)
 var jumping = false
 
 onready var sprite = get_node("SpriteSheet")
 onready var animator = get_node("AnimationPlayer")
 var bullet_scene = load("res://character/Bullet.tscn")
+var bullet_scene2 = load("res://character/Bullet2.tscn")
 var barrier_scene = load("res://character/Barrier.tscn")
 
 
@@ -22,12 +23,23 @@ func _ready():
 func cast_spell():
 	print(get_node("ComboQueue").current_combo)
 	if get_node("ComboQueue").current_combo == "[Q]":
-		shoot_spell()
+		shoot_small_spell()
 	if get_node("ComboQueue").current_combo == "[E]":
 		barrier_spell()
+	if get_node("ComboQueue").current_combo == "[Q, Q]":
+		shoot_big_spell()
 
-func shoot_spell():
+func shoot_small_spell():
 	var bullet = bullet_scene.instance()
+	bullet.set_pos(get_global_pos())
+	bullet.add_collision_exception_with(self) # don't want player to collide with bullet
+	var sprite_scale = sprite.get_scale()
+	bullet.velocity = Vector2(sprite_scale.x * 10, 0)
+	get_parent().add_child(bullet)
+
+func shoot_big_spell():
+	print("shooting 2")
+	var bullet = bullet_scene2.instance()
 	bullet.set_pos(get_global_pos())
 	bullet.add_collision_exception_with(self) # don't want player to collide with bullet
 	var sprite_scale = sprite.get_scale()
@@ -36,7 +48,6 @@ func shoot_spell():
 
 func barrier_spell():
 	var barrier = barrier_scene.instance()
-	#barrier.position = get_global_position()
 	barrier.add_collision_exception_with(self) # don't want player to collide with bullet
 	add_child(barrier)
 

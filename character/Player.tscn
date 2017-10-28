@@ -4,11 +4,10 @@
 [ext_resource path="res://character/png/player/player-spritemap-v9-greenpants.png" type="Texture" id=2]
 [ext_resource path="res://character/ComboQueue.gd" type="Script" id=3]
 
-[sub_resource type="CapsuleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-radius = 10.0
-height = 20.0
+extents = Vector2( 14.3356, 21.8782 )
 
 [sub_resource type="Animation" id=2]
 
