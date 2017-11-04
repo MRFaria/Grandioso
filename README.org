@@ -1,6 +1,7 @@
 * Grandioso
 ** Controls
    Q,W,E for spells
+   
    Spacebar to jump
 ** Mechanics
 The idea of the game is that various spells are activated by certain key combinations.
