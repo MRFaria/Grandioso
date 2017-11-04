@@ -1,15 +1,18 @@
 * Grandioso
+** Controls
+   Q,W,E for spells
+   Spacebar to jump
 ** Mechanics
 The idea of the game is that various spells are activated by certain key combinations.
 These are based on a timer that waits for the next key once one is pressed.
 
 There will be three base spells, perhaps 3 symbolising 3 elements and these three can be combined to make other spells.
 
-I.e.
-|       | Air      | Water   | Fire   |
-| Air   | Glide    | Barrier |        |
-| Water |          |         |        |
-| Fire  | Firebolt |         | Meteor |
+I.e. For two key combinations:
+|       | Air     | Water   | Fire   |
+| Air   | Glide   |         |        |
+| Water | Tornado | Barrier |        |
+| Fire  |         |         | Meteor |
 
 ** Plan
 *** Simple spell list GUI
