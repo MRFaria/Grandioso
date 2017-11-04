@@ -1,0 +1,16 @@
+[gd_scene format=1]
+
+[node name="Menu" type="Node"]
+
+[node name="Control" type="Control" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 1031.0
+margin/bottom = 602.0
+
+

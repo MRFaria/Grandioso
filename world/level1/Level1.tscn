@@ -49,7 +49,7 @@ collision/bounce = 0.0
 collision/layers = 1
 collision/mask = 1
 occluder/light_mask = 1
-tile_data = IntArray( 524288, 0, 524290, 4, 524292, 4, 524294, 4, 524296, 4, 524298, 4, 524300, 4, 524302, 4 )
+tile_data = IntArray( 524288, 0, 524290, 4, 524292, 4, 524294, 4, 524296, 4, 524298, 4, 524300, 4, 524302, 4, 524304, 4, 524306, 4, 524308, 4, 524310, 4, 524312, 4 )
 
 [node name="Objects" type="TileMap" parent="World"]
 
@@ -87,10 +87,12 @@ collision/bounce = 0.0
 collision/layers = 1
 collision/mask = 1
 occluder/light_mask = 1
-tile_data = IntArray( 65534, 13, 65535, 13, 0, 13, 1, 12, 2, 13, 131070, 13, 65536, 13, 65540, 13, 196605, 14, 131075, 13, 131077, 12, 262142, 13, 262143, 13, 196612, 13, 524304, 4, 524306, 4, 524308, 4, 524309, 4, 524311, 4 )
+tile_data = IntArray( 131107, 1, 262175, 1, 393243, 1 )
 
 [node name="Enemy" parent="." instance=ExtResource( 5 )]
 
-transform/pos = Vector2( 736, 416 )
+transform/pos = Vector2( 717.893, 362.368 )
+transform/scale = Vector2( 3.47888, 3.90883 )
+collision/mask = 3
 
 

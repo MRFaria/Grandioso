@@ -13,12 +13,18 @@ onready var animator = get_node("AnimationPlayer")
 var bullet_scene = load("res://character/Bullet.tscn")
 var bullet_scene2 = load("res://character/Bullet2.tscn")
 var barrier_scene = load("res://character/Barrier.tscn")
+var menu_scene = load("res://gui/Menu.tscn")
 
 
 func _ready():
 	set_fixed_process(true)
 	animator.set_active(true)
 	get_node("ComboQueue").connect("combo", self, "cast_spell")
+	
+func open_menu():
+	# todo
+	get_parent().add_child(menu_scene)
+	
 
 func cast_spell():
 	print(get_node("ComboQueue").current_combo)
@@ -77,6 +83,11 @@ func _fixed_process(delta):
 	var move_left = Input.is_action_pressed("ui_left")
 	var move_right = Input.is_action_pressed("ui_right")
 	var jump = Input.is_action_pressed("jump")
+	var menu = Input.is_action_pressed("menu")
+	
+	# ToDo
+	#if menu:
+	#	open_menu()
 	
 	if is_move_and_slide_on_floor():
 		new_anim = handle_move(move_left, move_right, sprite)
