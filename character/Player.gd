@@ -32,7 +32,7 @@ func cast_spell():
 func shoot_small_spell():
 	var bullet = bullet_scene.instance()
 	bullet.set_pos(get_global_pos())
-	bullet.add_collision_exception_with(self) # don't want player to collide with bullet
+	#bullet.add_collision_exception_with(self) # don't want player to collide with bullet
 	var sprite_scale = sprite.get_scale()
 	bullet.velocity = Vector2(sprite_scale.x * 10, 0)
 	get_parent().add_child(bullet)
@@ -41,7 +41,7 @@ func shoot_big_spell():
 	print("shooting 2")
 	var bullet = bullet_scene2.instance()
 	bullet.set_pos(get_global_pos())
-	bullet.add_collision_exception_with(self) # don't want player to collide with bullet
+	#bullet.add_collision_exception_with(self) # don't want player to collide with bullet
 	var sprite_scale = sprite.get_scale()
 	bullet.velocity = Vector2(sprite_scale.x * 10, 0)	
 	get_parent().add_child(bullet)

@@ -1,67 +1,96 @@
-[gd_scene load_steps=5 format=1]
+[gd_scene load_steps=6 format=1]
 
-[ext_resource path="res://tilesets/bg_grassland_1.tex" type="Texture" id=1]
-[ext_resource path="res://character/Player.tscn" type="PackedScene" id=2]
-[ext_resource path="res://character/Enemy.tscn" type="PackedScene" id=3]
-
-[sub_resource type="RectangleShape2D" id=1]
-
-custom_solver_bias = 0.0
-extents = Vector2( 129.291, 153.715 )
+[ext_resource path="res://character/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://tilesets/opp-assets/environment/background/bg objects/bg_cloud01.png" type="Texture" id=2]
+[ext_resource path="res://tilesets/opp-assets/environment/background/bg objects/bg_cloud5.png" type="Texture" id=3]
+[ext_resource path="res://tilesets/tileset_resource.tres" type="TileSet" id=4]
+[ext_resource path="res://character/Enemy.tscn" type="PackedScene" id=5]
 
 [node name="Level1" type="Node2D"]
 
-[node name="Map" type="Node2D" parent="."]
+[node name="Player" parent="." instance=ExtResource( 1 )]
 
-transform/scale = Vector2( 0.2, 0.2 )
+transform/pos = Vector2( 288, 192 )
+z/z = 2
 
-[node name="bg_grassland_1" type="Sprite" parent="Map"]
+[node name="World" type="Node2D" parent="."]
 
-transform/pos = Vector2( 2090.6, 1314.49 )
-transform/scale = Vector2( 10.0164, 10.3298 )
-texture = ExtResource( 1 )
+transform/pos = Vector2( 0, 160 )
 
-[node name="Player" parent="." instance=ExtResource( 2 )]
-
-transform/pos = Vector2( 246.239, 161.977 )
-
-[node name="Wall" type="KinematicBody2D" parent="." groups=[
-"Destroyable_Objects",
-]]
+[node name="Bg" type="Node2D" parent="World"]
 
 editor/display_folded = true
-transform/pos = Vector2( 615, 125 )
-transform/scale = Vector2( 0.332664, 0.170496 )
-input/pickable = false
-shapes/0/shape = SubResource( 1 )
-shapes/0/transform = Matrix32( 1, 0, 0, 1.15961, 0, 0 )
-shapes/0/trigger = false
+transform/pos = Vector2( 32, -288 )
+
+[node name="bg_cloud01" type="Sprite" parent="World/Bg"]
+
+transform/pos = Vector2( 53.5501, 67.4016 )
+texture = ExtResource( 2 )
+
+[node name="bg_cloud5" type="Sprite" parent="World/Bg"]
+
+transform/pos = Vector2( 258.747, 148.115 )
+texture = ExtResource( 3 )
+
+[node name="Boundaries" type="TileMap" parent="World"]
+
+transform/pos = Vector2( -10, 0 )
+mode = 0
+tile_set = ExtResource( 4 )
+cell/size = Vector2( 32, 32 )
+cell/quadrant_size = 16
+cell/custom_transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+cell/half_offset = 2
+cell/tile_origin = 0
+cell/y_sort = false
+collision/use_kinematic = false
+collision/friction = 1.0
+collision/bounce = 0.0
 collision/layers = 1
 collision/mask = 1
-collision/margin = 0.08
+occluder/light_mask = 1
+tile_data = IntArray( 524288, 0, 524290, 4, 524292, 4, 524294, 4, 524296, 4, 524298, 4, 524300, 4, 524302, 4 )
 
-[node name="Sprite" type="Sprite" parent="Wall"]
+[node name="Objects" type="TileMap" parent="World"]
 
-transform/pos = Vector2( 1, 1 )
-transform/scale = Vector2( 0.858466, 0.830806 )
+transform/pos = Vector2( -10, 0 )
+mode = 0
+tile_set = ExtResource( 4 )
+cell/size = Vector2( 32, 32 )
+cell/quadrant_size = 16
+cell/custom_transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+cell/half_offset = 2
+cell/tile_origin = 0
+cell/y_sort = false
+collision/use_kinematic = false
+collision/friction = 1.0
+collision/bounce = 0.0
+collision/layers = 1
+collision/mask = 1
+occluder/light_mask = 1
+tile_data = IntArray( -131072, 13, -131071, 13, -131070, 13, -131069, 13, -2, 13, -1, 13, -65536, 13, -65535, 13, -65534, 14, -65533, 13, -65532, 13, -65531, 13, 65535, 13, 0, 13, 1, 13, 3, 14, 4, 13, 5, 13, 6, 13, 131070, 5, 65538, 14, 65542, 13, 196607, 13, 131072, 13, 131077, 13, 131078, 13 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall"]
+[node name="Details" type="TileMap" parent="World"]
 
-transform/scale = Vector2( 1, 1.15961 )
-shape = SubResource( 1 )
-trigger = false
-_update_shape_index = 0
+transform/pos = Vector2( -10, 0 )
+mode = 0
+tile_set = ExtResource( 4 )
+cell/size = Vector2( 32, 32 )
+cell/quadrant_size = 16
+cell/custom_transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+cell/half_offset = 2
+cell/tile_origin = 0
+cell/y_sort = false
+collision/use_kinematic = false
+collision/friction = 1.0
+collision/bounce = 0.0
+collision/layers = 1
+collision/mask = 1
+occluder/light_mask = 1
+tile_data = IntArray( 65534, 13, 65535, 13, 0, 13, 1, 12, 2, 13, 131070, 13, 65536, 13, 65540, 13, 196605, 14, 131075, 13, 131077, 12, 262142, 13, 262143, 13, 196612, 13, 524304, 4, 524306, 4, 524308, 4, 524309, 4, 524311, 4 )
 
-[node name="Enemy" parent="." groups=[
-"Enemies",
-] instance=ExtResource( 3 )]
+[node name="Enemy" parent="." instance=ExtResource( 5 )]
 
-transform/pos = Vector2( 850.228, 125.22 )
-
-[node name="Enemy1" parent="." groups=[
-"Enemies",
-] instance=ExtResource( 3 )]
-
-transform/pos = Vector2( 1001.66, 119.668 )
+transform/pos = Vector2( 736, 416 )
 
 
