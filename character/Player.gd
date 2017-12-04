@@ -4,6 +4,8 @@ var anim = "idle"
 const JUMP_SPEED = 450
 const FLOOR_NORMAL = Vector2(0,-1)
 const SLOPE_SLIDE_STOP = 100.0
+const RESET_POS = Vector2(300, 200)
+const RESET_FLOOR = 1000
 var gravity = Vector2(0, 1500.0)
 var velocity = Vector2(0, 0)
 var jumping = false
@@ -77,6 +79,9 @@ func handle_move(move_left, move_right, sprite):
 
 	return new_anim
 
+func _refresh():
+	velocity = Vector2(0, 0)
+	set_global_pos(RESET_POS)
 
 func _fixed_process(delta):
 	var new_anim = anim
@@ -88,6 +93,8 @@ func _fixed_process(delta):
 	# ToDo
 	#if menu:
 	#	open_menu()
+	if get_global_pos()[1] > RESET_FLOOR:
+		_refresh()
 	
 	if is_move_and_slide_on_floor():
 		new_anim = handle_move(move_left, move_right, sprite)
