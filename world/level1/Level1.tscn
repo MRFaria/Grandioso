@@ -1,98 +1,128 @@
-[gd_scene load_steps=6 format=1]
+[gd_scene load_steps=4 format=1]
 
 [ext_resource path="res://character/Player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://tilesets/opp-assets/environment/background/bg objects/bg_cloud01.png" type="Texture" id=2]
-[ext_resource path="res://tilesets/opp-assets/environment/background/bg objects/bg_cloud5.png" type="Texture" id=3]
-[ext_resource path="res://tilesets/tileset_resource.tres" type="TileSet" id=4]
-[ext_resource path="res://character/Enemy.tscn" type="PackedScene" id=5]
+[ext_resource path="res://world/level1/png/Block.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 15.9835, 15.975 )
 
 [node name="Level1" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 
-transform/pos = Vector2( 288, 192 )
+transform/pos = Vector2( 388.281, -7.38046 )
 z/z = 2
 
 [node name="World" type="Node2D" parent="."]
 
-transform/pos = Vector2( 0, 160 )
-
-[node name="Bg" type="Node2D" parent="World"]
+[node name="Block" type="Sprite" parent="World"]
 
 editor/display_folded = true
-transform/pos = Vector2( 32, -288 )
-
-[node name="bg_cloud01" type="Sprite" parent="World/Bg"]
-
-transform/pos = Vector2( 53.5501, 67.4016 )
+transform/pos = Vector2( 384.162, 89.4122 )
+transform/scale = Vector2( 7.92472, 1 )
 texture = ExtResource( 2 )
+modulate = Color( 0.480469, 0.274369, 0.00938416, 1 )
 
-[node name="bg_cloud5" type="Sprite" parent="World/Bg"]
+[node name="StaticBody2D" type="StaticBody2D" parent="World/Block"]
 
-transform/pos = Vector2( 258.747, 148.115 )
-texture = ExtResource( 3 )
-
-[node name="Boundaries" type="TileMap" parent="World"]
-
-transform/pos = Vector2( -10, 0 )
-mode = 0
-tile_set = ExtResource( 4 )
-cell/size = Vector2( 32, 32 )
-cell/quadrant_size = 16
-cell/custom_transform = Matrix32( 1, 0, 0, 1, 0, 0 )
-cell/half_offset = 2
-cell/tile_origin = 0
-cell/y_sort = false
-collision/use_kinematic = false
-collision/friction = 1.0
-collision/bounce = 0.0
+input/pickable = false
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
-occluder/light_mask = 1
-tile_data = IntArray( 524288, 0, 524290, 4, 524292, 4, 524294, 4, 524296, 4, 524298, 4, 524300, 4, 524302, 4, 524304, 4, 524306, 4, 524308, 4, 524310, 4, 524312, 4 )
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
 
-[node name="Objects" type="TileMap" parent="World"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Block/StaticBody2D"]
 
-transform/pos = Vector2( -10, 0 )
-mode = 0
-tile_set = ExtResource( 4 )
-cell/size = Vector2( 32, 32 )
-cell/quadrant_size = 16
-cell/custom_transform = Matrix32( 1, 0, 0, 1, 0, 0 )
-cell/half_offset = 2
-cell/tile_origin = 0
-cell/y_sort = false
-collision/use_kinematic = false
-collision/friction = 1.0
-collision/bounce = 0.0
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = 0
+
+[node name="Block1" type="Sprite" parent="World"]
+
+editor/display_folded = true
+transform/pos = Vector2( 225.241, 406.161 )
+transform/scale = Vector2( 7.69753, 1 )
+texture = ExtResource( 2 )
+modulate = Color( 0.480469, 0.274369, 0.00938416, 1 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="World/Block1"]
+
+input/pickable = false
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
-occluder/light_mask = 1
-tile_data = IntArray( -131072, 13, -131071, 13, -131070, 13, -131069, 13, -2, 13, -1, 13, -65536, 13, -65535, 13, -65534, 14, -65533, 13, -65532, 13, -65531, 13, 65535, 13, 0, 13, 1, 13, 3, 14, 4, 13, 5, 13, 6, 13, 131070, 5, 65538, 14, 65542, 13, 196607, 13, 131072, 13, 131077, 13, 131078, 13 )
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
 
-[node name="Details" type="TileMap" parent="World"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Block1/StaticBody2D"]
 
-transform/pos = Vector2( -10, 0 )
-mode = 0
-tile_set = ExtResource( 4 )
-cell/size = Vector2( 32, 32 )
-cell/quadrant_size = 16
-cell/custom_transform = Matrix32( 1, 0, 0, 1, 0, 0 )
-cell/half_offset = 2
-cell/tile_origin = 0
-cell/y_sort = false
-collision/use_kinematic = false
-collision/friction = 1.0
-collision/bounce = 0.0
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = 0
+
+[node name="Block2" type="Sprite" parent="World"]
+
+editor/display_folded = true
+transform/pos = Vector2( 774.133, 285.574 )
+transform/scale = Vector2( 27.8719, 1 )
+texture = ExtResource( 2 )
+modulate = Color( 0.480469, 0.274369, 0.00938416, 1 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="World/Block2"]
+
+input/pickable = false
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
-occluder/light_mask = 1
-tile_data = IntArray( 131107, 1, 262175, 1, 393243, 1 )
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
 
-[node name="Enemy" parent="." instance=ExtResource( 5 )]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Block2/StaticBody2D"]
 
-transform/pos = Vector2( 717.893, 362.368 )
-transform/scale = Vector2( 3.47888, 3.90883 )
-collision/mask = 3
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = 0
+
+[node name="Block3" type="Sprite" parent="World"]
+
+transform/pos = Vector2( 527.526, -30.8332 )
+transform/rot = 90.0344
+transform/scale = Vector2( 8.52877, 1 )
+texture = ExtResource( 2 )
+modulate = Color( 0.480469, 0.274369, 0.00938416, 1 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="World/Block3"]
+
+input/pickable = false
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Block3/StaticBody2D"]
+
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = 0
 
 

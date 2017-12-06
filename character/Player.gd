@@ -1,15 +1,5 @@
 extends KinematicBody2D
 
-var anim = "idle"
-const JUMP_SPEED = 450
-const FLOOR_NORMAL = Vector2(0,-1)
-const SLOPE_SLIDE_STOP = 100.0
-const RESET_POS = Vector2(300, 200)
-const RESET_FLOOR = 1000
-var gravity = Vector2(0, 1500.0)
-var velocity = Vector2(0, 0)
-var jumping = false
-
 onready var sprite = get_node("SpriteSheet")
 onready var animator = get_node("AnimationPlayer")
 var bullet_scene = load("res://character/Bullet.tscn")
@@ -17,11 +7,21 @@ var bullet_scene2 = load("res://character/Bullet2.tscn")
 var barrier_scene = load("res://character/Barrier.tscn")
 var menu_scene = load("res://gui/Menu.tscn")
 
+var anim = "idle"
+const JUMP_SPEED = 450
+const FLOOR_NORMAL = Vector2(0,-1)
+const SLOPE_SLIDE_STOP = 100.0
+var RESET_POS
+const RESET_FLOOR = 3000
+var gravity = Vector2(0, 1500.0)
+var velocity = Vector2(0, 0)
+var jumping = false
 
 func _ready():
 	set_fixed_process(true)
 	animator.set_active(true)
 	get_node("ComboQueue").connect("combo", self, "cast_spell")
+	RESET_POS = sprite.get_global_pos()
 	
 func open_menu():
 	# todo
@@ -79,7 +79,7 @@ func handle_move(move_left, move_right, sprite):
 
 	return new_anim
 
-func _refresh():
+func refresh():
 	velocity = Vector2(0, 0)
 	set_global_pos(RESET_POS)
 
@@ -94,7 +94,7 @@ func _fixed_process(delta):
 	#if menu:
 	#	open_menu()
 	if get_global_pos()[1] > RESET_FLOOR:
-		_refresh()
+		refresh()
 	
 	if is_move_and_slide_on_floor():
 		new_anim = handle_move(move_left, move_right, sprite)
