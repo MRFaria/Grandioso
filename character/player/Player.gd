@@ -2,9 +2,9 @@ extends KinematicBody2D
 
 onready var sprite = get_node("SpriteSheet")
 onready var animator = get_node("AnimationPlayer")
-var bullet_scene = load("res://character/Bullet.tscn")
-var bullet_scene2 = load("res://character/Bullet2.tscn")
-var barrier_scene = load("res://character/Barrier.tscn")
+var bullet_scene = load("res://character/player/Bullet.tscn")
+var bullet_scene2 = load("res://character/player/Bullet2.tscn")
+var barrier_scene = load("res://character/player/Barrier.tscn")
 
 var anim = "idle"
 const JUMP_SPEED = 450

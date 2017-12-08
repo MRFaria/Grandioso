@@ -1,20 +1,20 @@
 [gd_scene load_steps=4 format=1]
 
-[ext_resource path="res://character/Enemy.gd" type="Script" id=1]
-[ext_resource path="res://character/png/enemy.png" type="Texture" id=2]
+[ext_resource path="res://character/player/Bullet.gd" type="Script" id=1]
+[ext_resource path="res://character/png/weapons/staff-shot-02-30x15.png" type="Texture" id=2]
+
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 8.262, 16.8577 )
+extents = Vector2( 30.8877, 19.6168 )
 
-[node name="Enemy" type="KinematicBody2D" groups=[
-"Enemies",
-]]
+[node name="KinematicBody2D" type="KinematicBody2D"]
 
+transform/scale = Vector2( 2.08294, 1.66516 )
 input/pickable = false
 shapes/0/shape = SubResource( 1 )
-shapes/0/transform = Matrix32( 1, 0, 0, 1, 3.14022, 1.04674 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 2
 collision/mask = 2
@@ -23,12 +23,13 @@ script/script = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
 
-transform/scale = Vector2( 0.1, 0.1 )
+transform/scale = Vector2( 3.87092, 3.1062 )
 texture = ExtResource( 2 )
+region = true
+region_rect = Rect2( 10, 0, 20, 20 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 
-transform/pos = Vector2( 3.14022, 1.04674 )
 shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0

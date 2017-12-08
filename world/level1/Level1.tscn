@@ -1,8 +1,6 @@
-[gd_scene load_steps=5 format=1]
+[gd_scene load_steps=3 format=1]
 
-[ext_resource path="res://character/Player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://world/level1/png/Block.png" type="Texture" id=2]
-[ext_resource path="res://gui/HUD.gd" type="Script" id=3]
+[ext_resource path="res://world/png/Block.png" type="Texture" id=1]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -11,18 +9,11 @@ extents = Vector2( 15.9835, 15.975 )
 
 [node name="Level1" type="Node2D"]
 
-[node name="Player" parent="." instance=ExtResource( 1 )]
-
-transform/pos = Vector2( 388.281, -7.38046 )
-z/z = 2
-
-[node name="World" type="Node2D" parent="."]
-
-[node name="Block" type="StaticBody2D" parent="World"]
+[node name="Block" type="StaticBody2D" parent="."]
 
 editor/display_folded = true
-transform/pos = Vector2( 384.162, 89.4122 )
-transform/scale = Vector2( 7.92472, 1 )
+transform/pos = Vector2( 334.231, 87.796 )
+transform/scale = Vector2( 11.0796, 1 )
 input/pickable = false
 shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
@@ -34,18 +25,18 @@ constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Block"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Block"]
 
 shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
 
-[node name="Sprite" type="Sprite" parent="World/Block"]
+[node name="Sprite" type="Sprite" parent="Block"]
 
-texture = ExtResource( 2 )
+texture = ExtResource( 1 )
 modulate = Color( 0.480469, 0.274369, 0.00938416, 1 )
 
-[node name="Block1" type="StaticBody2D" parent="World"]
+[node name="Block1" type="StaticBody2D" parent="."]
 
 editor/display_folded = true
 transform/pos = Vector2( 225.241, 406.161 )
@@ -61,18 +52,18 @@ constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Block1"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Block1"]
 
 shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
 
-[node name="Sprite" type="Sprite" parent="World/Block1"]
+[node name="Sprite" type="Sprite" parent="Block1"]
 
-texture = ExtResource( 2 )
+texture = ExtResource( 1 )
 modulate = Color( 0.480469, 0.274369, 0.00938416, 1 )
 
-[node name="Block2" type="StaticBody2D" parent="World"]
+[node name="Block2" type="StaticBody2D" parent="."]
 
 editor/display_folded = true
 transform/pos = Vector2( 774.133, 285.574 )
@@ -88,24 +79,22 @@ constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Block2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Block2"]
 
 shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
 
-[node name="Sprite" type="Sprite" parent="World/Block2"]
+[node name="Sprite" type="Sprite" parent="Block2"]
 
-transform/scale = Vector2( 1, 1 )
-texture = ExtResource( 2 )
+texture = ExtResource( 1 )
 modulate = Color( 0.480469, 0.274369, 0.00938416, 1 )
 
-[node name="Block3" type="StaticBody2D" parent="World"]
+[node name="Block3" type="StaticBody2D" parent="."]
 
 editor/display_folded = true
-transform/pos = Vector2( 527.526, -30.8332 )
-transform/rot = 90.0344
-transform/scale = Vector2( 8.52877, 1 )
+transform/pos = Vector2( 1660.71, 285.745 )
+transform/scale = Vector2( 27.8719, 1 )
 input/pickable = false
 shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
@@ -117,23 +106,21 @@ constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Block3"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Block3"]
 
 shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
 
-[node name="Sprite" type="Sprite" parent="World/Block3"]
+[node name="Sprite" type="Sprite" parent="Block3"]
 
-transform/scale = Vector2( 1, 1 )
-texture = ExtResource( 2 )
+texture = ExtResource( 1 )
 modulate = Color( 0.480469, 0.274369, 0.00938416, 1 )
 
-[node name="Block4" type="StaticBody2D" parent="World" groups=[
+[node name="Block4" type="StaticBody2D" parent="." groups=[
 "Destroyable_Objects",
 ]]
 
-editor/display_folded = true
 transform/pos = Vector2( 1204.31, 135.026 )
 transform/rot = 90.0344
 transform/scale = Vector2( 8.52877, 1 )
@@ -148,24 +135,44 @@ constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
 
-[node name="Sprite" type="Sprite" parent="World/Block4"]
+[node name="Sprite" type="Sprite" parent="Block4"]
 
-transform/scale = Vector2( 1, 1 )
-texture = ExtResource( 2 )
+texture = ExtResource( 1 )
 modulate = Color( 0.707031, 0.0248566, 0.248695, 1 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Block4"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Block4"]
 
 shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
 
-[node name="HUD" type="CanvasLayer" parent="."]
+[node name="Block5" type="StaticBody2D" parent="." groups=[
+"Destroyable_Objects",
+]]
 
-layer = 1
-offset = Vector2( 0, 0 )
-rotation = 0.0
-scale = Vector2( 1, 1 )
-script/script = ExtResource( 3 )
+transform/pos = Vector2( 494.821, -63.877 )
+transform/rot = 90.0344
+transform/scale = Vector2( 8.52877, 1 )
+input/pickable = false
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 3
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="Sprite" type="Sprite" parent="Block5"]
+
+texture = ExtResource( 1 )
+modulate = Color( 0.707031, 0.0248566, 0.248695, 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Block5"]
+
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = 0
 
 

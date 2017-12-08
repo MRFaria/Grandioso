@@ -1,9 +1,9 @@
 [gd_scene load_steps=10 format=1]
 
-[ext_resource path="res://character/Player.gd" type="Script" id=1]
+[ext_resource path="res://character/player/Player.gd" type="Script" id=1]
 [ext_resource path="res://character/png/player/player-spritemap-v9-greenpants.png" type="Texture" id=2]
-[ext_resource path="res://character/Camera2D.gd" type="Script" id=3]
-[ext_resource path="res://character/ComboQueue.gd" type="Script" id=4]
+[ext_resource path="res://character/player/Camera2D.gd" type="Script" id=3]
+[ext_resource path="res://character/player/ComboQueue.gd" type="Script" id=4]
 
 [sub_resource type="CapsuleShape2D" id=1]
 

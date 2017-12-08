@@ -17,13 +17,8 @@ func _fixed_process(delta):
 	move(velocity)
 	if is_colliding():
 		var node = get_collider()
-		print(node)
-		if node.is_in_group("Destroyable_Objects"):
-			node.queue_free()
-			queue_free()
-		elif node.is_in_group("Enemies"):
-			node.queue_free()
-			queue_free()
+		if node.is_in_group("Player"):
+			node.refresh()
 
 func on_timeout():
 	self.queue_free()
