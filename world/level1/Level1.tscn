@@ -17,16 +17,11 @@ z/z = 2
 
 [node name="World" type="Node2D" parent="."]
 
-[node name="Block" type="Sprite" parent="World"]
+[node name="Block" type="StaticBody2D" parent="World"]
 
 editor/display_folded = true
 transform/pos = Vector2( 384.162, 89.4122 )
 transform/scale = Vector2( 7.92472, 1 )
-texture = ExtResource( 2 )
-modulate = Color( 0.480469, 0.274369, 0.00938416, 1 )
-
-[node name="StaticBody2D" type="StaticBody2D" parent="World/Block"]
-
 input/pickable = false
 shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
@@ -38,22 +33,22 @@ constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Block/StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Block"]
 
 shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
 
-[node name="Block1" type="Sprite" parent="World"]
+[node name="Sprite" type="Sprite" parent="World/Block"]
+
+texture = ExtResource( 2 )
+modulate = Color( 0.480469, 0.274369, 0.00938416, 1 )
+
+[node name="Block1" type="StaticBody2D" parent="World"]
 
 editor/display_folded = true
 transform/pos = Vector2( 225.241, 406.161 )
 transform/scale = Vector2( 7.69753, 1 )
-texture = ExtResource( 2 )
-modulate = Color( 0.480469, 0.274369, 0.00938416, 1 )
-
-[node name="StaticBody2D" type="StaticBody2D" parent="World/Block1"]
-
 input/pickable = false
 shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
@@ -65,22 +60,22 @@ constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Block1/StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Block1"]
 
 shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
 
-[node name="Block2" type="Sprite" parent="World"]
+[node name="Sprite" type="Sprite" parent="World/Block1"]
+
+texture = ExtResource( 2 )
+modulate = Color( 0.480469, 0.274369, 0.00938416, 1 )
+
+[node name="Block2" type="StaticBody2D" parent="World"]
 
 editor/display_folded = true
 transform/pos = Vector2( 774.133, 285.574 )
 transform/scale = Vector2( 27.8719, 1 )
-texture = ExtResource( 2 )
-modulate = Color( 0.480469, 0.274369, 0.00938416, 1 )
-
-[node name="StaticBody2D" type="StaticBody2D" parent="World/Block2"]
-
 input/pickable = false
 shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
@@ -92,22 +87,24 @@ constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Block2/StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Block2"]
 
 shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
 
-[node name="Block3" type="Sprite" parent="World"]
+[node name="Sprite" type="Sprite" parent="World/Block2"]
 
-transform/pos = Vector2( 527.526, -30.8332 )
-transform/rot = 90.0344
-transform/scale = Vector2( 8.52877, 1 )
+transform/scale = Vector2( 1, 1 )
 texture = ExtResource( 2 )
 modulate = Color( 0.480469, 0.274369, 0.00938416, 1 )
 
-[node name="StaticBody2D" type="StaticBody2D" parent="World/Block3"]
+[node name="Block3" type="StaticBody2D" parent="World"]
 
+editor/display_folded = true
+transform/pos = Vector2( 527.526, -30.8332 )
+transform/rot = 90.0344
+transform/scale = Vector2( 8.52877, 1 )
 input/pickable = false
 shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
@@ -119,7 +116,43 @@ constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Block3/StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Block3"]
+
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = 0
+
+[node name="Sprite" type="Sprite" parent="World/Block3"]
+
+transform/scale = Vector2( 1, 1 )
+texture = ExtResource( 2 )
+modulate = Color( 0.480469, 0.274369, 0.00938416, 1 )
+
+[node name="Block4" type="StaticBody2D" parent="World" groups=[
+"Destroyable_Objects",
+]]
+
+transform/pos = Vector2( 1204.31, 135.026 )
+transform/rot = 90.0344
+transform/scale = Vector2( 8.52877, 1 )
+input/pickable = false
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 3
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="Sprite" type="Sprite" parent="World/Block4"]
+
+transform/scale = Vector2( 1, 1 )
+texture = ExtResource( 2 )
+modulate = Color( 0.707031, 0.0248566, 0.248695, 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Block4"]
 
 shape = SubResource( 1 )
 trigger = false
