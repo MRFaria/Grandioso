@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=1]
+[gd_scene load_steps=5 format=1]
 
 [ext_resource path="res://character/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://world/level1/png/Block.png" type="Texture" id=2]
+[ext_resource path="res://gui/HUD.gd" type="Script" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -132,6 +133,7 @@ modulate = Color( 0.480469, 0.274369, 0.00938416, 1 )
 "Destroyable_Objects",
 ]]
 
+editor/display_folded = true
 transform/pos = Vector2( 1204.31, 135.026 )
 transform/rot = 90.0344
 transform/scale = Vector2( 8.52877, 1 )
@@ -157,5 +159,13 @@ modulate = Color( 0.707031, 0.0248566, 0.248695, 1 )
 shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+layer = 1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+script/script = ExtResource( 3 )
 
 

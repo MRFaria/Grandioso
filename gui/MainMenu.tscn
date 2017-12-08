@@ -1,0 +1,29 @@
+[gd_scene format=1]
+
+[node name="MainMenu" type="Panel"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 1024.0
+margin/bottom = 600.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 44.0
+margin/top = 48.0
+margin/right = 370.0
+margin/bottom = 227.0
+bbcode/enabled = false
+bbcode/bbcode = "A very shitty menu"
+visible_characters = -1
+percent_visible = 1.0
+
+
