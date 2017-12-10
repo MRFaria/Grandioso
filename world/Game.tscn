@@ -10,7 +10,7 @@
 "Player",
 ] instance=ExtResource( 1 )]
 
-transform/pos = Vector2( 388.281, -7.38046 )
+transform/pos = Vector2( 2062.8, 222.099 )
 z/z = 2
 
 [node name="HUD" type="CanvasLayer" parent="."]

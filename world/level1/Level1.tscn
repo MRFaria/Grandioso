@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=1]
+[gd_scene load_steps=5 format=1]
 
 [ext_resource path="res://world/png/Block.png" type="Texture" id=1]
-[ext_resource path="res://character/enemies/Enemy.tscn" type="PackedScene" id=2]
+[ext_resource path="res://world/objects/Door.tscn" type="PackedScene" id=2]
+[ext_resource path="res://character/enemies/Enemy.tscn" type="PackedScene" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -37,32 +38,9 @@ _update_shape_index = 0
 texture = ExtResource( 1 )
 modulate = Color( 0.480469, 0.274369, 0.00938416, 1 )
 
-[node name="Block1" type="StaticBody2D" parent="."]
+[node name="BossDoor" parent="." instance=ExtResource( 2 )]
 
-editor/display_folded = true
-transform/pos = Vector2( 225.241, 406.161 )
-transform/scale = Vector2( 7.69753, 1 )
-input/pickable = false
-shapes/0/shape = SubResource( 1 )
-shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
-shapes/0/trigger = false
-collision/layers = 1
-collision/mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Block1"]
-
-shape = SubResource( 1 )
-trigger = false
-_update_shape_index = 0
-
-[node name="Sprite" type="Sprite" parent="Block1"]
-
-texture = ExtResource( 1 )
-modulate = Color( 0.480469, 0.274369, 0.00938416, 1 )
+transform/pos = Vector2( 2165.08, 193.85 )
 
 [node name="Block2" type="StaticBody2D" parent="."]
 
@@ -175,7 +153,7 @@ shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
 
-[node name="Enemy" parent="." instance=ExtResource( 2 )]
+[node name="Enemy" parent="." instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 1422.41, 226.578 )
 

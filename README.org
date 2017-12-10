@@ -26,3 +26,6 @@ I.e. For two key combinations:
 ***** Firebolt
 
 *** Create a boss fight to showcase basic wizard abilities
+First fight will be against a grand master fire wizard.
+The aim of this will be to show what kinds of abilities your character will grow to have eventually as the game progresses.
+
