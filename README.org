@@ -24,3 +24,5 @@ I.e. For two key combinations:
 **** Think about what spells are required to complete the first level
 ***** Barrier 
 ***** Firebolt
+
+*** Create a boss fight to showcase basic wizard abilities

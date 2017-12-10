@@ -15,6 +15,7 @@ const RESET_FLOOR = 3000
 var gravity = Vector2(0, 1500.0)
 var velocity = Vector2(0, 0)
 var jumping = false
+var health_points = 2
 
 func _ready():
 	set_fixed_process(true)

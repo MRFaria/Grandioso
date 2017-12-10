@@ -2,7 +2,6 @@ extends KinematicBody2D
 var velocity
 
 var timer = Timer.new()
-onready var root = get_tree().get_root().get_node("Level1")
 
 func _ready():
 
