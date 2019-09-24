@@ -15,12 +15,9 @@ const RESET_FLOOR = 3000
 var gravity = Vector2(0, 1500.0)
 var velocity = Vector2(0, 0)
 var jumping = false
-var health_points = 2
 
 func _ready():
-	set_physics_process(true)  #-- NOTE: Automatically converted by Godot 2 to 3 converter, please review
 	animator.set_active(true)
-	get_node("ComboQueue").connect("combo", self, "cast_spell")
 	RESET_POS = sprite.get_global_position()  #-- NOTE: Automatically converted by Godot 2 to 3 converter, please review
 	
 
@@ -84,7 +81,6 @@ func _physics_process(delta):  #-- NOTE: Automatically converted by Godot 2 to 3
 	var move_left = Input.is_action_pressed("ui_left")
 	var move_right = Input.is_action_pressed("ui_right")
 	var jump = Input.is_action_pressed("jump")
-	var menu = Input.is_action_pressed("menu")
 	
 	if get_global_position()[1] > RESET_FLOOR:  #-- NOTE: Automatically converted by Godot 2 to 3 converter, please review
 		refresh()
@@ -116,3 +112,7 @@ func _physics_process(delta):  #-- NOTE: Automatically converted by Godot 2 to 3
 		anim = new_anim
 		animator.play(anim)
 
+
+
+func _on_ComboQueue_combo():
+	cast_spell()

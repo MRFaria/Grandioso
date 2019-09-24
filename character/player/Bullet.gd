@@ -12,7 +12,7 @@ func _ready():
 	set_physics_process(true)  #-- NOTE: Automatically converted by Godot 2 to 3 converter, please review
 
 	
-func _physics_process(delta):  #-- NOTE: Automatically converted by Godot 2 to 3 converter, please review
+func _physics_process(_delta):  #-- NOTE: Automatically converted by Godot 2 to 3 converter, please review
 	var collision = move_and_collide(velocity)  #-- NOTE: Automatically converted by Godot 2 to 3 converter, please review
 	if collision:
 		var node = collision.collider

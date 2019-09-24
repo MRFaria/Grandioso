@@ -10,11 +10,11 @@ func _ready():
 	timer.connect("timeout",self,"on_timeout")
 	add_child(timer)
 	timer.start()
-	set_physics_process(true)  #-- NOTE: Automatically converted by Godot 2 to 3 converter, please review
+	set_physics_process(true)
 
 	
-func _physics_process(delta):  #-- NOTE: Automatically converted by Godot 2 to 3 converter, please review
-	var collision = move_and_collide(velocity)  #-- NOTE: Automatically converted by Godot 2 to 3 converter, please review
+func _physics_process(_delta):
+	var collision = move_and_collide(velocity)
 	if collision:
 		var node = collision.collider
 		if node.is_in_group("Player"):

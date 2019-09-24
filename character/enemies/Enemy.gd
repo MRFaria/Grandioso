@@ -2,7 +2,6 @@ extends KinematicBody2D
 # class member variables go here, for example:
 # var a = 2
 # var b = "textvar"
-var time = 0
 var scene = load("res://character/enemies/EnemyBullet.tscn")
 func _ready():
 	var timer = get_node("Timer")

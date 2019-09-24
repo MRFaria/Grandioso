@@ -8,8 +8,6 @@ func _ready():
 
 	
 func _input(event):
-	var bullet
-	
 	if event.is_action_pressed("menu"):
 		if !main_menu_state:
 			main_menu_instance = main_menu_scene.instance()
