@@ -2,22 +2,33 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/staff-shot-08-30x15.png-eba910f352de7a06c87379973e196188.stex"
+path="res://.import/staff-shot-08-30x15.png-11b87caf989fde06c8a0c13c366bb4ae.stex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://character/png/weapons/staff-shot-08-30x15.png"
+dest_files=[ "res://.import/staff-shot-08-30x15.png-11b87caf989fde06c8a0c13c366bb4ae.stex" ]
 
 [params]
 
 compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
+compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
+process/invert_color=false
 stream=false
 size_limit=0
 detect_3d=true
+svg/scale=1.0

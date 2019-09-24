@@ -2,22 +2,33 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/hat8.png-8edcd10c7074d819848e5ae46e61969f.stex"
+path="res://.import/hat8.png-be57118cc872c2cb3eb27cf2e29f06d3.stex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://character/png/icons/hat8.png"
+dest_files=[ "res://.import/hat8.png-be57118cc872c2cb3eb27cf2e29f06d3.stex" ]
 
 [params]
 
 compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
+compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
+process/invert_color=false
 stream=false
 size_limit=0
 detect_3d=true
+svg/scale=1.0

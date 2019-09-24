@@ -13,7 +13,7 @@ func _ready():
 	
 func shoot():
 	var bullet = scene.instance()
-	bullet.set_pos(get_global_pos() + Vector2(0, 0))
+	bullet.set_position(get_global_position() + Vector2(0, 0))  #-- NOTE: Automatically converted by Godot 2 to 3 converter, please review
 	bullet.add_collision_exception_with(self) 
 	bullet.velocity = Vector2(-10, 0)
 	
@@ -21,3 +21,4 @@ func shoot():
 
 func on_timeout():
 	shoot()
+

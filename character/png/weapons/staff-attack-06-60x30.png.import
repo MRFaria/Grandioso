@@ -2,22 +2,33 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/staff-attack-06-60x30.png-6f8a8329f0e935c29e0fc916bdb68423.stex"
+path="res://.import/staff-attack-06-60x30.png-c5cd16bf9d1347c805b759bde3b4546a.stex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://character/png/weapons/staff-attack-06-60x30.png"
+dest_files=[ "res://.import/staff-attack-06-60x30.png-c5cd16bf9d1347c805b759bde3b4546a.stex" ]
 
 [params]
 
 compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
+compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
+process/invert_color=false
 stream=false
 size_limit=0
 detect_3d=true
+svg/scale=1.0

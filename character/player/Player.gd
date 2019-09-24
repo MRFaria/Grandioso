@@ -18,10 +18,10 @@ var jumping = false
 var health_points = 2
 
 func _ready():
-	set_fixed_process(true)
+	set_physics_process(true)  #-- NOTE: Automatically converted by Godot 2 to 3 converter, please review
 	animator.set_active(true)
 	get_node("ComboQueue").connect("combo", self, "cast_spell")
-	RESET_POS = sprite.get_global_pos()
+	RESET_POS = sprite.get_global_position()  #-- NOTE: Automatically converted by Godot 2 to 3 converter, please review
 	
 
 func cast_spell():
@@ -35,7 +35,7 @@ func cast_spell():
 
 func shoot_small_spell():
 	var bullet = bullet_scene.instance()
-	bullet.set_pos(get_global_pos())
+	bullet.set_position(get_global_position())  #-- NOTE: Automatically converted by Godot 2 to 3 converter, please review
 	#bullet.add_collision_exception_with(self) # don't want player to collide with bullet
 	var sprite_scale = sprite.get_scale()
 	bullet.velocity = Vector2(sprite_scale.x * 10, 0)
@@ -44,7 +44,7 @@ func shoot_small_spell():
 func shoot_big_spell():
 	print("shooting 2")
 	var bullet = bullet_scene2.instance()
-	bullet.set_pos(get_global_pos())
+	bullet.set_position(get_global_position())  #-- NOTE: Automatically converted by Godot 2 to 3 converter, please review
 	#bullet.add_collision_exception_with(self) # don't want player to collide with bullet
 	var sprite_scale = sprite.get_scale()
 	bullet.velocity = Vector2(sprite_scale.x * 10, 0)	
@@ -55,7 +55,7 @@ func barrier_spell():
 	barrier.add_collision_exception_with(self) # don't want player to collide with bullet
 	add_child(barrier)
 
-func handle_move(move_left, move_right, sprite):
+func handle_move_and_collide(move_left, move_right, sprite):  #-- NOTE: Automatically converted by Godot 2 to 3 converter, please review
 	var new_anim = ""
 	var speed = 200
 	
@@ -77,20 +77,20 @@ func handle_move(move_left, move_right, sprite):
 
 func refresh():
 	velocity = Vector2(0, 0)
-	set_global_pos(RESET_POS)
+	set_global_position(RESET_POS)  #-- NOTE: Automatically converted by Godot 2 to 3 converter, please review
 
-func _fixed_process(delta):
+func _physics_process(delta):  #-- NOTE: Automatically converted by Godot 2 to 3 converter, please review
 	var new_anim = anim
 	var move_left = Input.is_action_pressed("ui_left")
 	var move_right = Input.is_action_pressed("ui_right")
 	var jump = Input.is_action_pressed("jump")
 	var menu = Input.is_action_pressed("menu")
 	
-	if get_global_pos()[1] > RESET_FLOOR:
+	if get_global_position()[1] > RESET_FLOOR:  #-- NOTE: Automatically converted by Godot 2 to 3 converter, please review
 		refresh()
 	
-	if is_move_and_slide_on_floor():
-		new_anim = handle_move(move_left, move_right, sprite)
+	if is_on_floor():  #-- NOTE: Automatically converted by Godot 2 to 3 converter, please review
+		new_anim = handle_move_and_collide(move_left, move_right, sprite)  #-- NOTE: Automatically converted by Godot 2 to 3 converter, please review
 		if jump:
 			new_anim = "jump"
 			velocity.y -= JUMP_SPEED
@@ -98,14 +98,14 @@ func _fixed_process(delta):
 		else:
 			jumping = false
 	elif jumping:
-		handle_move(move_left, move_right, sprite)
+		handle_move_and_collide(move_left, move_right, sprite)  #-- NOTE: Automatically converted by Godot 2 to 3 converter, please review
 		if jump && (velocity.y < 0):
 			gravity = Vector2(0, 600.0)
 		else:
 			new_anim = "fall"
 			gravity = Vector2(0, 1500.0)
 	elif not jumping:
-		handle_move(move_left, move_right, sprite)
+		handle_move_and_collide(move_left, move_right, sprite)  #-- NOTE: Automatically converted by Godot 2 to 3 converter, please review
 		if abs(velocity.y) > 500:
 			new_anim = "fall"
 
@@ -115,3 +115,4 @@ func _fixed_process(delta):
 	if new_anim != anim:
 		anim = new_anim
 		animator.play(anim)
+

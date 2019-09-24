@@ -2,22 +2,33 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/book8.png-ce9c4e2c9bca7c2b86218752e64e2812.stex"
+path="res://.import/book8.png-ab22049c6ccd4818f00e0f433034e6d5.stex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://character/png/icons/book8.png"
+dest_files=[ "res://.import/book8.png-ab22049c6ccd4818f00e0f433034e6d5.stex" ]
 
 [params]
 
 compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
+compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
+process/invert_color=false
 stream=false
 size_limit=0
 detect_3d=true
+svg/scale=1.0

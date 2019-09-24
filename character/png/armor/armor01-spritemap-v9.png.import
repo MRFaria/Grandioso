@@ -2,22 +2,33 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/armor01-spritemap-v9.png-24dab4628cc735bb383ce4f89bb39037.stex"
+path="res://.import/armor01-spritemap-v9.png-bfce543b90dace26dc26de47cb7df0dd.stex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://character/png/armor/armor01-spritemap-v9.png"
+dest_files=[ "res://.import/armor01-spritemap-v9.png-bfce543b90dace26dc26de47cb7df0dd.stex" ]
 
 [params]
 
 compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
+compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
+process/invert_color=false
 stream=false
 size_limit=0
 detect_3d=true
+svg/scale=1.0

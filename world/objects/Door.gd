@@ -1,13 +1,9 @@
 extends Area2D
 
-func _ready():
-	connect("body_enter", self, "_on_body_enter")
-	connect("body_exit", self, "_on_body_exit")
+func _on_Door_body_entered(body):
+	if body.is_in_group("Player"):
+		get_node("Open").visible = !(false)  #-- NOTE: Automatically converted by Godot 2 to 3 converter, please review
 
-func _on_body_enter(body):
+func _on_Door_body_exited(body):
 	if body.is_in_group("Player"):
-		get_node("Open").set_hidden(false)
-	
-func _on_body_exit(body):
-	if body.is_in_group("Player"):
-		get_node("Open").set_hidden(true)
+		get_node("Open").visible = !(true)  #-- NOTE: Automatically converted by Godot 2 to 3 converter, please review

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/staff-attack-03-60x30.png-eb5efd88e7bd77eb527aab160a80fd9f.stex"
+path="res://.import/Enemy.png-2e75f0c5ce9ccd638f5480ec12f557f7.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://character/png/weapons/staff-attack-03-60x30.png"
-dest_files=[ "res://.import/staff-attack-03-60x30.png-eb5efd88e7bd77eb527aab160a80fd9f.stex" ]
+source_file="res://character/png/Enemy.png"
+dest_files=[ "res://.import/Enemy.png-2e75f0c5ce9ccd638f5480ec12f557f7.stex" ]
 
 [params]
 

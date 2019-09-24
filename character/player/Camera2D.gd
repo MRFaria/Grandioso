@@ -11,23 +11,14 @@ func _ready():
 	# Initialization here
 	pass
 
-var looking_up = false
-var looking_down = false
-
-func _fixed_process(delta):
+func _physics_process(delta):  #-- NOTE: Automatically converted by Godot 2 to 3 converter, please review
 	var look_up = Input.is_action_pressed("ui_up")
 	var look_down = Input.is_action_pressed("ui_down")
 
 	if look_up:
-		self.set_global_pos(get_parent().get_global_pos() + TRANSLATE_UP)
+		self.set_global_position(get_parent().get_global_position() + TRANSLATE_UP)  #-- NOTE: Automatically converted by Godot 2 to 3 converter, please review
 	elif look_down:
-		self.set_global_pos(get_parent().get_global_pos() - TRANSLATE_UP)
+		self.set_global_position(get_parent().get_global_position() - TRANSLATE_UP)  #-- NOTE: Automatically converted by Godot 2 to 3 converter, please review
 	else:
-		self.set_global_pos(get_parent().get_global_pos())
-		
-		
-#	elif look_up and looking_up:
-#		self.translate(-LOOKUP) 
-#		looking_up = false
+		self.set_global_position(get_parent().get_global_position())  #-- NOTE: Automatically converted by Godot 2 to 3 converter, please review
 
-		
