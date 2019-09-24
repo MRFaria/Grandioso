@@ -1,0 +1,31 @@
+* Grandioso
+** Controls
+   Q,W,E for spells
+   
+   Spacebar to jump
+** Mechanics
+The idea of the game is that various spells are activated by certain key combinations.
+These are based on a timer that waits for the next key once one is pressed.
+
+There will be three base spells, perhaps 3 symbolising 3 elements and these three can be combined to make other spells.
+
+I.e. For two key combinations:
+|       | Air     | Water   | Fire   |
+| Air   | Glide   |         |        |
+| Water | Tornado | Barrier |        |
+| Fire  |         |         | Meteor |
+
+** Plan
+*** Simple spell list GUI
+*** Create a prototype level to test if the mechanics are fun
+**** Need to think of some obstacles and or enemies and spells to resolve these
+*** Create the first level
+**** This level teaches mechanics (hopefully without text)
+**** Think about what spells are required to complete the first level
+***** Barrier 
+***** Firebolt
+
+*** Create a boss fight to showcase basic wizard abilities
+First fight will be against a grand master fire wizard.
+The aim of this will be to show what kinds of abilities your character will grow to have eventually as the game progresses.
+
